@@ -1,5 +1,8 @@
 version: 0.1
+env:
+  secrets-manager
+    TOKEN: sonarcloudtoken:TOKEN
 phases:
   build:
     commands:
-      - mvn verify sonar:sonar -Dsonar.projectKey=javaplaygroundmjean01_mj-sonarcloud -Dsonar.organization=javaplaygroundmjean01 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=b27ffc63ae9f5221325f48c1b5be4927c0592b87
+      - mvn verify sonar:sonar -Dsonar.projectKey=javaplaygroundmjean01_mj-sonarcloud -Dsonar.organization=javaplaygroundmjean01 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$TOKEN
